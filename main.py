@@ -19,6 +19,10 @@ app = FastAPI()
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
+@app.get("/")
+def home():
+    return {"message": "FastAPI Auth CRUD API is live"}
+
 
 def get_db():
     db = SessionLocal()
